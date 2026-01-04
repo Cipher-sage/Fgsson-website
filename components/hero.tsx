@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
       {/* Background with Overlays */}
       <div className="absolute inset-0 z-0">
-        <Image src="/medical-research-nigeria-health.jpg" alt="FGSSN Mission" fill className="object-cover grayscale" priority />
+        <Image src="/hero-bg.png" alt="FGSSoN Mission" fill className="object-cover grayscale" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         <div className="absolute inset-0 bg-primary/5" />
       </div>
@@ -38,7 +38,7 @@ export function Hero() {
         </div>
 
         <div className="hidden lg:block relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
-          <Image src="/african-medical-professional-smiling.jpg" alt="Medical Support" fill className="object-cover" />
+          <Image src="/hero-bg.png" alt="Medical Support" fill className="object-cover" />
           <div className="absolute bottom-6 right-6 bg-background/90 backdrop-blur p-6 rounded-xl border border-white/20 shadow-xl max-w-[240px]">
             <p className="text-xs uppercase tracking-widest font-bold text-primary mb-1">Our Reach</p>
             <p className="text-2xl font-serif leading-none mb-2">36 States</p>

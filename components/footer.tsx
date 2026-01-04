@@ -10,7 +10,7 @@ export function Footer() {
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
               S
             </div>
-            <span className="font-serif text-2xl font-bold tracking-tighter">FGSSN</span>
+            <span className="font-serif text-2xl font-bold tracking-tighter">FGSSoN</span>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
             The Female Genital Schistosomiasis Society of Nigeria is a registered NGO committed to research and
@@ -34,7 +34,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li>
               <Link href="#" className="hover:text-primary transition-colors">
-                About FGSSN
+                About FGSSoN
               </Link>
             </li>
             <li>

@@ -43,7 +43,7 @@ export function Navbar() {
             <Phone size={12} /> +234 803 605 8782
           </span>
         </div>
-        <div className="hidden md:block">Welcome to FGSSN</div>
+        <div className="hidden md:block">Welcome to FGSSoN</div>
       </div>
 
       {/* Main Nav */}
@@ -59,7 +59,7 @@ export function Navbar() {
           <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
             S
           </div>
-          <span className="font-serif text-xl font-bold tracking-tighter hidden sm:inline-block">FGSSN</span>
+          <span className="font-serif text-xl font-bold tracking-tighter hidden sm:inline-block">FGSSoN</span>
         </Link>
 
         {/* Desktop Nav */}
