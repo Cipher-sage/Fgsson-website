@@ -6,14 +6,14 @@ import { Menu, X, Phone, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Organogram", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Gallery", href: "#" },
-  { name: "News", href: "#" },
-  { name: "Newsletter", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Organogram", href: "/#organogram" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "News", href: "/#news" },
+  { name: "Newsletter", href: "/#newsletter" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 export function Navbar() {
@@ -43,7 +43,7 @@ export function Navbar() {
             <Phone size={12} /> +234 803 605 8782
           </span>
         </div>
-        <div className="hidden md:block">Welcome to FGSSoN</div>
+        <div className="hidden md:block">Welcome to FGSSN</div>
       </div>
 
       {/* Main Nav */}
@@ -59,7 +59,7 @@ export function Navbar() {
           <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
             S
           </div>
-          <span className="font-serif text-xl font-bold tracking-tighter hidden sm:inline-block">FGSSoN</span>
+          <span className="font-serif text-xl font-bold tracking-tighter hidden sm:inline-block">FGSSN</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -70,7 +70,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="#"
+            href="/donate"
             className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-all"
           >
             Donate
@@ -86,7 +86,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-6 transition-transform duration-500",
+          "lg:hidden fixed inset-0 bg-background z-[60] flex flex-col items-center justify-center gap-6 transition-transform duration-500",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
@@ -101,11 +101,11 @@ export function Navbar() {
           </Link>
         ))}
         <Link
-          href="#"
+          href="/donate"
           className="bg-primary text-white px-8 py-3 rounded-full text-lg font-medium"
           onClick={() => setMobileMenuOpen(false)}
         >
-          Get Involved
+          Donate Now
         </Link>
       </div>
     </header>
