@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,9 +8,13 @@ export function Footer() {
       <div className="container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
         <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
-              S
-            </div>
+              <Image 
+                src="/logo.png"          
+                alt="FGSSoN Logo" 
+                width={40}               
+                height={40} 
+                className="object-contain"
+              />
             <span className="font-serif text-2xl font-bold tracking-tighter">FGSSoN</span>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">

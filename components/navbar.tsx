@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Phone, Mail } from "lucide-react"
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import Image from "next/image"
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
   { name: "Organogram", href: "/#organogram" },
   { name: "Projects", href: "/#projects" },
   { name: "Gallery", href: "/#gallery" },
@@ -56,15 +57,37 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
-            S
-          </div>
-          <span className="font-serif text-xl font-bold tracking-tighter hidden sm:inline-block">FGSSN</span>
+        <Image 
+                src="/logo.png"          
+                alt="FGSSoN Logo" 
+                width={40}               
+                height={40} 
+                className="object-contain"
+              />
+          <span className="font-serif text-xl font-bold tracking-tighter hidden sm:inline-block">FGSSoN</span>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
+          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            Home
+          </Link>
+
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1 outline-none">
+              About <ChevronDown size={14} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-48 bg-background border-border">
+              <DropdownMenuItem asChild className="cursor-pointer focus:bg-accent focus:text-accent-foreground">
+                <Link href="/about-us">About Us</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="cursor-pointer focus:bg-accent focus:text-accent-foreground">
+                <Link href="/team">Our Team</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {navItems.slice(1).map((item) => (
             <Link key={item.name} href={item.href} className="text-sm font-medium hover:text-primary transition-colors">
               {item.name}
             </Link>
@@ -86,11 +109,31 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 bg-background z-[60] flex flex-col items-center justify-center gap-6 transition-transform duration-500",
+          "lg:hidden fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-6 transition-transform duration-500",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
-        {navItems.map((item) => (
+        <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-serif hover:text-primary">
+          Home
+        </Link>
+        <div className="flex flex-col items-center gap-4">
+          <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold">About</span>
+          <Link
+            href="/about-us"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif hover:text-primary"
+          >
+            About Us
+          </Link>
+          <Link
+            href="/team"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif hover:text-primary"
+          >
+            Our Team
+          </Link>
+        </div>
+        {navItems.slice(1).map((item) => (
           <Link
             key={item.name}
             href={item.href}

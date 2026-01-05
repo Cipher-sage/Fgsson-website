@@ -7,25 +7,18 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Female Genital Schistosomiasis Society of Nigeria',
+  description: 'The Female Genital Schistosomiasis Society of Nigeria is a registered NGO committed to research and elimination of FGS.',
+  generator: 'FGSSoN',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/Logo.png',
+    apple: '/Logo.png',
+  },
+  openGraph: {
+    title: 'FGSSoN - Female Genital Schistosomiasis Society of Nigeria',
+    description: 'Leading the fight against FGS through research and advocacy.',
+    images: [{ url: '/Logo.png' }],
+    type: 'website',
   },
 }
 
